@@ -53,18 +53,6 @@ public enum AlertActionStyle {
 
      - returns: UIColor representing the color for the current style
      */
-    func color() -> UIColor {
-        switch self {
-        case .default:
-            return ColorPalette.greenColor
-        case .cancel:
-            return ColorPalette.grayColor
-        case .destructive:
-            return ColorPalette.redColor
-        case let .custom(color):
-            return color
-        }
-    }
 
 }
 
@@ -189,8 +177,8 @@ public class AlertViewController: UIViewController, CornerRadiusSettable {
 	private func setupContainerView() {
 		containerView.clipsToBounds = true
         containerView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
-        firstButton.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
-        secondButton.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
+        firstButton.backgroundColor = .clear
+        secondButton.backgroundColor = .clear
 	}
 
     private func setupFonts() {
@@ -226,7 +214,7 @@ public class AlertViewController: UIViewController, CornerRadiusSettable {
         let title = action.title.uppercased()
         let style = action.style
         toButton.setTitle(title, for: UIControl.State())
-        toButton.setTitleColor(style.color(), for: UIControl.State())
+        toButton.setTitleColor(.white, for: UIControl.State())
     }
 
     // MARK: IBAction's
