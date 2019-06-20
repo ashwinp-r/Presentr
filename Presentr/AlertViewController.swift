@@ -188,7 +188,9 @@ public class AlertViewController: UIViewController, CornerRadiusSettable {
 
 	private func setupContainerView() {
 		containerView.clipsToBounds = true
-        containerView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6)
+        containerView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
+        firstButton.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
+        secondButton.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
 	}
 
     private func setupFonts() {
@@ -197,7 +199,9 @@ public class AlertViewController: UIViewController, CornerRadiusSettable {
 		}
 
         titleLabel.font = titleFont ?? Font.Montserrat.font()
+        titleLabel.textColor = .white
         bodyLabel.font = bodyFont ?? Font.SourceSansPro.font()
+        bodyLabel.textColor = .white
         firstButton.titleLabel?.font = buttonFont ?? Font.Montserrat.font(11.0)
         secondButton.titleLabel?.font = buttonFont ?? Font.Montserrat.font(11.0)
     }
